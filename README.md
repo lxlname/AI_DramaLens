@@ -1,5 +1,24 @@
 # 🎬 AI DramaLens 灵镜工厂 - 小说转剧本智能工具
 
+## 0. 项目文件结构
+本项目采用标准化的 Python 工程结构，核心代码与文档分布如下：
+
+```text
+AI_DramaLens/
+├── app.py                 # 项目主入口，Gradio 前端界面与流程调度
+├── omni_parser.py         # 多模态文档解析器（支持 TXT/DOCX/PDF/图片OCR）
+├── smart_sorter.py        # 智能语义排序算法（处理乱序文本拼接）
+├── writer_agent.py        # 剧本生成核心引擎（并发调用大模型）
+├── prompt_lib.py          # 动态提示词工程库（世界观、风格、参数量化）
+├── docs/                  # 📄 文档目录
+│   ├── YAML_Schema.md     # 🌟 核心交付物：剧本 YAML Schema 定义与设计说明 (Markdown版)
+│   └── YAML_Schema.txt    # 🌟 核心交付物：剧本 YAML Schema 定义与设计说明 (纯文本版)
+├── image/                 # README 展示配图目录
+├── requirements.txt       # 项目依赖清单
+├── .env.example           # 环境变量配置模板（API Key）
+└── .gitignore             # Git 忽略清单
+
+
 ## 1. 项目简介
 本项目是一款面向小说作者与影视从业者的 AI 辅助剧本创作工具。旨在打破传统小说改编剧本的高门槛，通过构建一条“小说原本多模态解析 -> 智能语义排序 -> 动态提示词工程 -> 并发切片生成”的完整流水线，将非结构化的小说长文本，全自动转换为高度结构化、极具可编辑性的 YAML 格式剧本初稿。
 
